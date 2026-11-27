@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wanderlust · Установка и запуск</title><style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#13141b;color:#f9f6ef}
+*{box-sizing:border-box}body{margin:0}.wrap{max-width:880px;margin:auto;padding:clamp(28px,8vw,90px) 24px}
+h1{font-size:clamp(2.5rem,8vw,5.2rem);line-height:1;letter-spacing:-.07em;overflow-wrap:anywhere;margin:16px 0 24px}
+h2{font-size:1.1rem;margin:0}.lead{max-width:63ch;color:#dad9e3;font-size:1.15rem;line-height:1.65}
+a{color:#ffbd89}.top{display:flex;gap:24px;flex-wrap:wrap}.box{padding:24px;margin-top:20px;background:#1d1f2a;border:1px solid #3c3e52;border-radius:14px}
+pre{background:#14151d;padding:15px;border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;color:#d6f9e9}
+ul{padding-left:1.2rem;line-height:1.9}.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;padding:0;list-style:none}.list a{display:block;background:#1d1f2a;border:1px solid #3c3e52;padding:10px 14px;border-radius:9px}
+
+html{scroll-behavior:smooth}.os-links{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.os-links a{border:1px solid #565870;padding:8px 13px;border-radius:99px;text-decoration:none;color:#fff7ef}.os-links a:hover,.os-links a:focus-visible{border-color:#ffbd89;color:#ffbd89}.box{scroll-margin-top:12px}.box p{line-height:1.6}.box h2{font-size:clamp(1.4rem,4vw,1.95rem);letter-spacing:-.035em}.box h3{margin-top:22px;font-size:1rem}.snippet{background:#14151d;border:1px solid #3c3e52;border-radius:10px;margin:14px 0}.snippet-head{padding:8px 13px;display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #3c3e52;color:#dad9e3;font-size:.82rem}.snippet-head button{cursor:pointer;background:#292b39;color:#fff7ef;padding:6px 9px;border:1px solid #565870;border-radius:6px;font:inherit}.snippet-head button:focus-visible{outline:2px solid #ffbd89;outline-offset:2px}.snippet pre{margin:0;font-size:.88rem}.note{color:#dad9e3}.status-copy:empty{display:none}.status-copy{position:sticky;bottom:14px;width:max-content;max-width:100%;background:#222533;border:1px solid #6b6d86;border-radius:8px;padding:8px 12px}.tag{font-family:ui-monospace,monospace;color:#9ee4c5}.zip{white-space:nowrap}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.guide-code{background:#14151d;border:1px solid #3c3e52;border-radius:10px;margin:14px 0}.code-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #3c3e52;padding:8px 13px;color:#dad9e3;font-size:.85rem}.code-head button{font:inherit;border:1px solid #65677d;background:#292b39;color:#fff7ef;border-radius:7px;padding:7px 10px;cursor:pointer}.guide-code pre{margin:0;font-size:.88rem}.box p{overflow-wrap:anywhere}.tool-links{display:flex;gap:12px;flex-wrap:wrap}.status-copy{z-index:2}</style></head>
+<body><main class="wrap">
+<nav class="top" aria-label="Проект"><a href="https://mainstarkov.github.io/wanderlust/">← К демонстрации</a><a href="https://github.com/mainstarkov/wanderlust">Исходники ↗</a><a href="https://github.com/mainstarkov/wanderlust/archive/refs/heads/main.zip">Скачать ZIP ↓</a></nav>
+<h1>Wanderlust</h1>
+<p class="lead">Демонстрационный сайт турагентства. Показывает каталог направлений, детали туров и отзывы.</p>
+<section class="box" aria-label="Описание проекта"><h2>Что умеет проект</h2><ul><li>Показывает фильтры и карточки туров.</li><li>Открывает информацию о туре в модальном окне.</li><li>Листает отзывы в отдельном слайдере.</li></ul>
+<p><strong>Требования.</strong> Современный браузер. Для локального HTTP-сервера понадобится Python 3.</p>
+<div class="tool-links"><a href="https://www.python.org/downloads/">Установить Python ↗</a><a href="https://git-scm.com/install/">Установить Git ↗</a></div>
+</section>
+<nav class="os-links" aria-label="Операционная система"><a href="#macos">macOS</a><a href="#windows">Windows</a><a href="#linux">Linux</a></nav>
+<section class="box" id="macos">
+<h2>macOS</h2>
+<h3>Подготовить Терминал</h3><p>Установите Python 3 через пакет для macOS или свой менеджер пакетов.</p><div class="guide-code"><div class="code-head"><span>Терминал</span></div><pre><code>python3 --version</code></pre></div>
+<h3>Скачать проект</h3><div class="guide-code"><div class="code-head"><span>Терминал</span></div><pre><code>git clone https://github.com/mainstarkov/wanderlust.git
+cd wanderlust</code></pre></div>
+<p>Или <a href="https://github.com/mainstarkov/wanderlust/archive/refs/heads/main.zip">скачайте ZIP</a>, распакуйте и откройте терминал в папке <code>wanderlust-main</code>.</p>
+<h3>Запустить</h3><div class="guide-code"><div class="code-head"><span>Терминал</span></div><pre><code>python3 -m http.server 8000 --bind 127.0.0.1</code></pre></div>
+
+</section><section class="box" id="windows">
+<h2>Windows</h2>
+<h3>Подготовить PowerShell</h3><p>Установите Python 3 с официального сайта. Команды ниже используют Python Launcher (py -3).</p><div class="guide-code"><div class="code-head"><span>PowerShell</span></div><pre><code>py -3 --version</code></pre></div>
+<h3>Скачать проект</h3><div class="guide-code"><div class="code-head"><span>PowerShell</span></div><pre><code>git clone https://github.com/mainstarkov/wanderlust.git
+Set-Location .\wanderlust</code></pre></div>
+<p>Или <a href="https://github.com/mainstarkov/wanderlust/archive/refs/heads/main.zip">скачайте ZIP</a>, распакуйте и откройте терминал в папке <code>wanderlust-main</code>.</p>
+<h3>Запустить</h3><div class="guide-code"><div class="code-head"><span>PowerShell</span></div><pre><code>py -3 -m http.server 8000 --bind 127.0.0.1</code></pre></div>
+
+</section><section class="box" id="linux">
+<h2>Linux</h2>
+<h3>Подготовить Терминал</h3><p>Установите Python 3 через менеджер пакетов вашего дистрибутива.</p><div class="guide-code"><div class="code-head"><span>Терминал</span></div><pre><code>python3 --version</code></pre></div>
+<h3>Скачать проект</h3><div class="guide-code"><div class="code-head"><span>Терминал</span></div><pre><code>git clone https://github.com/mainstarkov/wanderlust.git
+cd wanderlust</code></pre></div>
+<p>Или <a href="https://github.com/mainstarkov/wanderlust/archive/refs/heads/main.zip">скачайте ZIP</a>, распакуйте и откройте терминал в папке <code>wanderlust-main</code>.</p>
+<h3>Запустить</h3><div class="guide-code"><div class="code-head"><span>Терминал</span></div><pre><code>python3 -m http.server 8000 --bind 127.0.0.1</code></pre></div>
+
+</section>
+<section class="box"><h2>Как проверить результат</h2><p>Выберите направление, откройте карточку тура и пролистайте отзывы. Витрина демонстрационная, реальное бронирование не оформляется.</p>
+<p><strong>Адрес и режим работы.</strong> Откройте http://127.0.0.1:8000. Сервер можно остановить через Ctrl+C.</p>
+<p><strong>Исходники.</strong> index.html содержит секции страницы, script.js — фильтры и модальные окна, style.css — оформление.</p>
+</section><p class="status-copy" id="copy-status" role="status"></p>
+</main><script>
+const guideStatus = document.querySelector("#copy-status");
+if (navigator.clipboard) {
+  let hide;
+  for (const block of document.querySelectorAll(".guide-code")) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = "Копировать";
+    button.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(block.querySelector("code").textContent);
+        guideStatus.textContent = "Команды скопированы.";
+      } catch {
+        guideStatus.textContent = "Выделите и скопируйте команды вручную.";
+      }
+      clearTimeout(hide);
+      hide = setTimeout(() => { guideStatus.textContent = ""; }, 2200);
+    });
+    block.querySelector(".code-head").append(button);
+  }
+}
+</script></body></html>
