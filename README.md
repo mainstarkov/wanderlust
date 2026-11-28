@@ -1,5 +1,7 @@
 # 🌍 Wanderlust
 
+**[Попробовать демо](https://mainstarkov.github.io/wanderlust/)**
+
 Демонстрационный сайт турагентства. Показывает каталог направлений, детали туров и отзывы.
 
 [Открыть демо](https://mainstarkov.github.io/wanderlust/)
